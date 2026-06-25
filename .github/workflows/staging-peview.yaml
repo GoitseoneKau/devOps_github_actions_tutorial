@@ -6,14 +6,17 @@ on:
 jobs:
   deploy_preview:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true  # temporary override
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 
+      - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: 24.16.0
+          node-version: 20
 
       - name: Deploy to Firebase Dev Environment
         uses: FirebaseExtended/action-hosting-deploy@v0
