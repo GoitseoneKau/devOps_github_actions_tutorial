@@ -1,0 +1,19 @@
+name: Deploy Live Production
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy_production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Live Site
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_CLI_TOKEN }}'
+          projectId: my-devops-portfolio-prod
+          channelId: live

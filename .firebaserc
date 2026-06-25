@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "dev-env": "my-devops-portfolio-dev",
+    "prod-env": "my-devops-portfolio-prod"
+  }
+}
