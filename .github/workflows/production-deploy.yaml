@@ -4,7 +4,7 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy_preview:
+  deploy_production:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -16,9 +16,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      - name: Install Firebase CLI (legacy version)
-        run: npm install -g firebase-tools@11.16.1
 
       - name: Setup Node.js 24
         uses: actions/setup-node@v4

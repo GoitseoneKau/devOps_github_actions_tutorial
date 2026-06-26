@@ -6,3 +6,5 @@ coverage/
 *.log
 .env*
 !.env.example
+my-devops-portfolio-prod.json
+my-devops-portfolio-dev.json
